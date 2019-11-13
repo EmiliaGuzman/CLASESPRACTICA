@@ -128,3 +128,42 @@ int main()
     df.getDatos();
     df.imprimirDatos();
 }
+
+class Empleado{
+private:
+    string nombre;
+    string apellido;
+    double salario;
+public:
+    Empleado(string a,string b,double c):nombre(a),apellido(b), salario(c){}
+    Empleado(const Empleado &e);
+    void getDatos();
+    void getSalario();
+};
+
+void Empleado::getDatos(){
+    cout << "Ingrese su nombre: " ;
+    cin >> nombre;
+    cout << "Ingrese su apellido: ";
+    cin >> apellido;
+}
+
+void Empleado::getSalario(){
+    cout << "Ingrese su salario: ";
+    cin >> salario;
+    if(salario<0){salario=0;}
+    double sueldored=salario*0.1;
+    cout << "Su nuevo sueldo anual es: "<< sueldored;
+
+}
+
+Empleado::Empleado(string a,string b,double c):nombre(a),apellido(b), salario(c){}
+Empleado::Empleado(const Empleado &e) : nombre(e.nombre), apellido(e.apellido), salario(e.salario){}
+
+int main()
+{
+    Empleado desc;
+    desc.getDatos();
+    desc.getSalario();
+
+}

@@ -1,4 +1,6 @@
 #include <iostream>
+#include<stdio.h>
+#include<conio.h>
 
 using namespace std;
 
@@ -7,12 +9,14 @@ private:
     string nombre;
     string apellido;
     double salario;
+
 public:
     Empleado();
     Empleado(string a,string b,double c);
     ///Empleado(const Empleado &e);
     void getDatos();
     void getSalario();
+    void ordenamientoApellido();
 };
 
 Empleado::Empleado(string a,string b,double c){
@@ -22,17 +26,26 @@ Empleado::Empleado(string a,string b,double c){
 }
 
 void Empleado::getDatos(){
-    cout << "Ingrese su nombre: " ;
-    cin >> nombre;
-    cout << "Ingrese su apellido: ";
-    cin >> apellido;
+    int cantidadPersonas;
+    cout << " Cuantos trabajadores hay: ";
+    cin >> cantidadPersonas;
+    for(int i=0; i<= cantidadPersonas; i++)
+    {
+        cout << "Ingrese su nombre: " ;
+        cin >> nombre;
+        cout << "Ingrese su apellido: ";
+        cin >> apellido;
+        cout << "Ingrese su salario: ";
+        cin >> salario;
 
+    }
+    char apellido[];
+    cout << apellido;
 }
 
 
 void Empleado::getSalario(){
-    cout << "Ingrese su salario: ";
-    cin >> salario;
+
     cout << endl;
     cout << "Su salario anual actual es"<< salario<< endl;
     if(salario<0){
@@ -43,6 +56,12 @@ void Empleado::getSalario(){
 
 }
 
+void Empleado::ordenamientoApellido()
+{
+    char apellido1= {apellido};
+    char c= apellido[0];
+
+}
 
 int main()
 {

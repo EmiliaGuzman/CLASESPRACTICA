@@ -2,52 +2,45 @@
 
 using namespace std;
 
-class Empleado{
+class Estudiante{
+
 private:
     string nombre;
     string apellido;
-    double salario;
+    string codigo;
 public:
-    Empleado();
-    Empleado(string a,string b,double c);
-    ///Empleado(const Empleado &e);
+    Estudiante();
     void getDatos();
-    void getSalario();
+    void imprimirDatos();
+
 };
 
-Empleado::Empleado(string a,string b,double c){
-    nombre = a;
-    apellido = b;
-    salario = c;
-}
-
-void Empleado::getDatos(){
-    cout << "Ingrese su nombre: " ;
-    cin >> nombre;
-    cout << "Ingrese su apellido: ";
-    cin >> apellido;
+Estudiante::Estudiante(){
 
 }
 
+void Estudiante::getDatos()
+{
+        cout << "Ingrese su nombre:";
+        cin >> nombre;
+        cout << "Ingrese su apellido:";
+        cin >> apellido;
+        cout << "Ingrese su codigo:";
+        cin >> codigo;
+        cout << endl;}
 
-void Empleado::getSalario(){
-    cout << "Ingrese su salario: ";
-    cin >> salario;
+void Estudiante::imprimirDatos()
+{
+    cout << "Su nombre es "<< nombre << " "<< apellido << endl;
+    cout << "Con codigo "<< codigo;
     cout << endl;
-    cout << "Su salario anual actual es"<< salario<< endl;
-    if(salario<0){
-            cout << "Su salario es negativo, se le ajustara a 0"<< endl;
-            salario=0;}
-    double sueldored=salario*0.1;
-    cout << "Su sueldo anual descontado es: "<< sueldored;
-
 }
 
 
 int main()
 {
-    Empleado desc(0,0,0);
-    desc.getDatos();
-    desc.getSalario();
-
+    Estudiante ana;
+    ana.getDatos();
+    ana.imprimirDatos();
 }
+

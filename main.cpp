@@ -2,131 +2,52 @@
 
 using namespace std;
 
-class Estudiante{
-
+class Empleado{
 private:
     string nombre;
     string apellido;
-    string codigo;
+    double salario;
 public:
-    /*Estudiante(string name,string lname,string code )
-    {
-        nombre=nombre;
-        apellido=apellido;
-        codigo=codigo;
-    }*/
+    Empleado();
+    Empleado(string a,string b,double c);
+    ///Empleado(const Empleado &e);
     void getDatos();
-    void imprimirDatos();
-
+    void getSalario();
 };
 
-
-void Estudiante::getDatos()
-{
-        cout << "Ingrese su nombre:";
-        cin >> nombre;
-        cout << "Ingrese su apellido:";
-        cin >> apellido;
-        cout << "Ingrese su codigo:";
-        cin >> codigo;
-        cout << endl;}
-
-void Estudiante::imprimirDatos()
-{
-    cout << "Su nombre es "<< nombre << " "<< apellido << endl;
-    cout << "Con codigo "<< codigo;
-    cout << endl;
+Empleado::Empleado(string a,string b,double c){
+    nombre = a;
+    apellido = b;
+    salario = c;
 }
 
-class Curso{
-private:
-    string nombre;
-    string codigo;
-    char alumnos[4];
-    int cantidadAlumnos();
-public:
-    void getDatos();
-    void imprimirDatos();
-
-};
-
-void Curso::getDatos()
-{
-    cout << "Ingrese su nombre: ";
+void Empleado::getDatos(){
+    cout << "Ingrese su nombre: " ;
     cin >> nombre;
-    cout << "Ingrese su codigo: ";
-    cin >> codigo;
-    cout << "Ingrese la lista de alumnos: ";
-    cin >> alumnos[4];
-    for(int i=0; i<4; i++)
-    {
-        alumno[i];
-    }
-    cout << "Ingrese la cantidad de alumnos: ";
-    cin >> cantidadAlumnos;
-}
-
-void Curso::imprimirDatos()
-{
-    cout << "Su nombre es "<< nombre << " "<< apellido << endl;
-    cout << "Con codigo "<< codigo;
-    cout << endl;
-    cout << "La lista de alumnos es como sigue: "<< alumnos[4]<< endl;
-    cout << "La cantidad de alumnos"<< cantidadAlumnos[];
-    cout << endl;
+    cout << "Ingrese su apellido: ";
+    cin >> apellido;
 
 }
 
-};
 
-class Curso{
-private:
-    string nombre;
-    string codigo;
-    char alumnos[4];
-    int cantidadAlumnos();
-public:
-    void getDatos();
-    void imprimirDatos();
+void Empleado::getSalario(){
+    cout << "Ingrese su salario: ";
+    cin >> salario;
+    cout << endl;
+    cout << "Su salario anual actual es"<< salario<< endl;
+    if(salario<0){
+            cout << "Su salario es negativo, se le ajustara a 0"<< endl;
+            salario=0;}
+    double sueldored=salario*0.1;
+    cout << "Su sueldo anual descontado es: "<< sueldored;
 
-};
-
-void Curso::getDatos()
-{
-    cout << "Ingrese su nombre: ";
-    cin >> nombre;
-    cout << "Ingrese su codigo: ";
-    cin >> codigo;
-    cout << "Ingrese la lista de alumnos: ";
-    cin >> alumnos[4];
-    for(int i=0; i<4; i++)
-    {
-        alumno[i];
-    }
-    cout << "Ingrese la cantidad de alumnos: ";
-    cin >> cantidadAlumnos;
 }
 
-void Curso::imprimirDatos()
-{
-    cout << "Su nombre es "<< nombre << " "<< apellido << endl;
-    cout << "Con codigo "<< codigo;
-    cout << endl;
-    cout << "La lista de alumnos es como sigue: "<< alumnos[4]<< endl;
-    cout << "La cantidad de alumnos"<< cantidadAlumnos[];
-    cout << endl;
-
-}
 
 int main()
 {
-    Estudiante ana;
-    ana.getDatos();
-    ana.imprimirDatos();
-    
-    Curso df;
-    df.getDatos();
-    df.imprimirDatos();
+    Empleado desc(0,0,0);
+    desc.getDatos();
+    desc.getSalario();
+
 }
-
-

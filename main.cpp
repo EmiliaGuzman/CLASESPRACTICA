@@ -51,26 +51,67 @@ public:
 
 Curso::Curso(string n ,string c, int a)
 {
-    string nombre=n;
-    string codigo=c;
-    int cantidadAlumnos=a;
+    nombre=n;
+    codigo=c;
+    cantidadAlumnos=a;
 }
 
-Curso::getDatos()
+void Curso::getDatos()
 {
-    cout << "Ingrese su nombre: ";
-    cin >> n;
-    cout << "Ingrese su codigo: ";
-    cin >> c;
-    cout << "Diga cuantos alumnos hay: ";
-    cin >> a;
-    
+    cout << "Cuantos alumnos ingresaran datos: ";
+    cin >> cantidadAlumnos;
+    for(int i=0;i<cantidadAlumnos;i++)
+    {
+        cout << "Ingrese su nombre: ";
+        cin >> nombre;
+        cout << "Ingrese su codigo: ";
+        cin >> codigo;
+    }
+
+}
+void Curso::changeDatos()
+{
+    string respuesta;
+    cout << "Quieres aumentar o disminuir datos?";
+    cin>> respuesta;
+
+    if(respuesta=="SI")
+    {
+        int cantidadExtraAlumnos;
+        cout << "Cuantos alumnos extra ingresaran a la lista: ";
+        cin >> cantidadExtraAlumnos;
+        for(int i=0;i<cantidadExtraAlumnos;i++)
+        {
+        cout << "Ingrese su nombre: ";
+        cin >> nombre;
+        cout << "Ingrese su codigo: ";
+        cin >> codigo;
+        }
+
+    }
+    else{cout<< "Sin cambios"<< endl;}
 }
 
+/*void Curso::incremento()
+{
+    char **aumento;
+    aumento= new char *[cantidadAlumnos+1];
+    for(int n=0; n<cantidadAlumnos+1;n++)
+    {
+        cout << "Ingrese su nombre: ";
+        cin >> nombre;
+        cout << "Ingrese su codigo: ";
+        cin >> codigo;
+
+    }
+}
+*/
 int main()
 {
     Estudiante ana;
     ana.getDatos();
     ana.imprimirDatos();
-}
+    Curso mater(0,0,0);
+    mater.getDatos();
 
+}

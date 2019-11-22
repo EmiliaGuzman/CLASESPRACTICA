@@ -1,0 +1,93 @@
+#include <iostream>
+
+using namespace std;
+
+class Estudiante{
+
+private:
+    string nombre;
+    string apellido;
+    string codigo;
+public:
+
+    void getDatos();
+    void imprimirDatos();
+
+};
+
+
+void Estudiante::getDatos()
+{
+        cout << "Ingrese su nombre:";
+        cin >> nombre;
+        cout << "Ingrese su apellido:";
+        cin >> apellido;
+        cout << "Ingrese su codigo:";
+        cin >> codigo;
+        cout << endl;}
+
+void Estudiante::imprimirDatos()
+{
+    cout << "Su nombre es "<< nombre << " "<< apellido << endl;
+    cout << "Con codigo "<< codigo;
+    cout << endl;
+}
+
+class Curso{
+private:
+    string nombre;
+    string codigo;
+
+public:
+    Estudiante *alumnos;
+    int cantidadAlumnos;
+    void getDatos();
+    void incrementar();
+};
+
+void Curso::getDatos(){
+    cout << "La cantidad de alumnos es ";
+    cin>> cantidadAlumnos;
+    cout<<endl;
+    char *c;
+    c= new char; alumnos[cantidadAlumnos-1];
+    for(int i= 0; i<=cantidadAlumnos-1; ++i)
+    {
+        cout << "Ingrese su nombre: ";
+        cin >> nombre;
+        cout << "Ingrese su codigo: ";
+        cin >> codigo;
+        c[i]=*new char ;alumnos[i];
+        cout << c<< endl;
+    }
+
+}
+
+void Curso::incrementar(){
+    cantidadAlumnos++;
+    char s;
+    char* ns= new char, alumnos[cantidadAlumnos];
+    for(int n=0; n < cantidadAlumnos; n++)
+    {
+        ns[n]=alumnos[cantidadAlumnos];
+        cout << alumnos<<endl;
+    }
+    ns[cantidadAlumnos-1]=s;
+    ///delete [] alumnos;
+    ///&alumnos=ns;
+    cout <<"/////////";
+    cout << s<< endl;
+    cout << ns;
+
+}
+
+
+int main()
+{
+    Estudiante ana;
+    ana.getDatos();
+    ana.imprimirDatos();
+    Curso math;
+    math.getDatos();
+    math.incrementar();
+}
